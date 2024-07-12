@@ -1,14 +1,16 @@
-name: ubuntu ffmpeg
-
 on:
-  workflow_dispatch:
+  workflow_call:
+    inputs:
+      username:
+        description: 'A username passed from the caller workflow'
+        default: 'john-doe'
+        required: false
+        type: string
 
 jobs:
- build:
-  runs-on: ubuntu-latest
+  print-username:
+    runs-on: ubuntu-latest
 
     steps:
-      - name: install ffmpeg
-        run: sudo apt install ffmpeg -y
-      - name: check ffmpeg
-        run: ffmpeg
+      - name: Print the input name to STDOUT
+        run: echo The username is ${{ inputs.username }}
