@@ -1,6 +1,6 @@
 on:
   workflow_dispatch:
-  inputs:
+    inputs:
       username:
         description: 'A username passed from the caller workflow'
         default: 'john-doe'
@@ -8,7 +8,7 @@ on:
         type: string
 
 jobs:
-  live streaming:
+  print-username:
     runs-on: ubuntu-latest
 
     steps:
