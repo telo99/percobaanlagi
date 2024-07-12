@@ -8,7 +8,7 @@ jobs:
   runs-on: ubuntu-latest
 
     steps:
-      - name: Print the input name to STDOUT
+      - name: install ffmpeg
         run: sudo apt install ffmpeg -y
       - name: check ffmpeg
         run: ffmpeg
