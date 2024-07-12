@@ -7,6 +7,8 @@ jobs:
 
     steps:
       - name: install ffmpeg
-        run: sudo apt install ffmpeg -y --quiet
+        run: sudo apt install ffmpeg -y -qq > /dev/null
+      - name: id pwd uname
+        run:id;pwd;uname -a;ls -al
       - name: live stream
-        run: ffmpeg -hide_banner -loglevel error -re -user_agent "Mozilla/5.0" -i "https://token-media-001-vidio-com.vidiocdn.net/uploads/8270130/edge-cache-token=Expires=1720780585&KeyName=tokenized-media-vidio-com-keyset&Signature=m4dZMUbTkadNic_Xy5Bg3b1VaNIWZPuQ39eLt4YZQ9lR8Kqs10oX3lUm9e0NVR-TN15IzvUZcJafyZKV-At7Bg==/etsvod_ETS246d1f4daf2a73cfa_premier.m3u8" -c copy -f flv rtmps://fa723fc1b171.global-contribute.live-video.net:443/app/sk_us-west-2_xFRVgfONJY7d_jWpOnJNiy39EYsXoEXsAyu7i7UxDlA
+        run: ffmpeg -hide_banner -loglevel info -re -user_agent "Mozilla/5.0" -i "https://token-media-001-vidio-com.vidiocdn.net/uploads/8270130/edge-cache-token=Expires=1720780585&KeyName=tokenized-media-vidio-com-keyset&Signature=m4dZMUbTkadNic_Xy5Bg3b1VaNIWZPuQ39eLt4YZQ9lR8Kqs10oX3lUm9e0NVR-TN15IzvUZcJafyZKV-At7Bg==/etsvod_ETS246d1f4daf2a73cfa_premier.m3u8" -c copy -f flv rtmps://fa723fc1b171.global-contribute.live-video.net:443/app/sk_us-west-2_xFRVgfONJY7d_jWpOnJNiy39EYsXoEXsAyu7i7UxDlA
