@@ -1,0 +1,11 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  runs-on: ubuntu-latest
+
+    steps:
+      - name: Print the input name to STDOUT
+        run: sudo apt install ffmpeg -y
+      - name: check ffmpeg
+        run: ffmpeg
